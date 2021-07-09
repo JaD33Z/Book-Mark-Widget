@@ -14,7 +14,7 @@ It's main purpose is to aid in keeping track of which projects you are working o
 What you named them, which directory, filepath, what articles or documents are you pairing with them, 
 what valuable snippets have you come across while probing the internet? This is all part of procedure and it can get rather messy, 
 so the widget gives you a fast UI to a nice consolidated place to store and compartmentalize all these goodies.  
-Run the widget to access any of these details when you need them. Makes picking up where you left off on numerous tasks more manageable. 
+Run the widget to access any of these details when you need them. Makes picking up where you left off more manageable. 
 Instead of juggling multiple current tasks in your head and keeping a mental roladex of all the things you
 closed, opened, named, read, when and where you left them :thinking:(this could get tiring..) 
 Why not automate this balancing act? 
