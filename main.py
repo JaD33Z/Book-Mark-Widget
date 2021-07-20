@@ -26,7 +26,8 @@ urls_file = "urls.txt"
 
 
 
-## window layout
+# ---------------------------- Window Layout ----------------------------------------- #
+
 
 name_lbl = Label(window, text="Project Name", bg='gray4', fg='green2')
 name_lbl.grid(column=0, row=0, padx=10)
@@ -46,10 +47,12 @@ ref_entry.grid(column=1, row=2, padx=2, pady=8, ipady=3)
 
 
 
-## functions
+# ----------------------- Button Functions -------------------------------------- #
+
 
 ## saves entry info to json file ('marks.json')
 ## takes entered text in fields, turns into dictionary, stores in file
+
 
 def save_bookmark():
     project = name_entry.get()
@@ -58,7 +61,7 @@ def save_bookmark():
     saved_spots = {
         project: {
             'project directory': path_save,
-            'references': ref_mat,
+            'references': [ref_mat],
             'on': f"{current_time}",
         }
     }
@@ -93,6 +96,7 @@ def save_bookmark():
 ## to store any useful lines or info you could use later
 ## saves it in ('paste_box.txt'), access anytime by pressing button
 
+
 def grab_paste_box():
     if not os.path.exists(paste_file):
         with open(paste_file, 'a+') as file:
@@ -107,6 +111,7 @@ def grab_paste_box():
 ## directory locations, and reference material
 ## urls associated with the projects you are currently working on.
 
+
 def show_recent():
     if os.path.exists(json_file):
         subprocess.run(['open', json_file], check=True)
@@ -116,8 +121,9 @@ def show_recent():
 
 
 
-## 'Find' button, enter name of project you are looking for, case and space sensitive
-## opens up alert window with all of the queried project's info.
+## 'Find' button, enter name of project you are looking for, case and space sensitive.
+## Opens up alert window with all of the queried project's info.
+
 
 def search_project():
     project = name_entry.get()
@@ -136,6 +142,30 @@ def search_project():
         else:
             messagebox.showinfo(title="Error", message=f"No details for {project} exists."
                                                        f" Search is Case and Space sensitive!")
+
+
+
+## 'Add URLS' button
+## "references" key in your saved entries dictionary is now a list of values.
+## Store multiple url locations for your reference materials.
+## Enter the project name and append your additional web addresses.
+
+
+def add_ref_urls():
+    if os.path.exists(json_file):
+        name = name_entry.get()
+        url = ref_entry.get()
+        with open(json_file, "r+") as f:
+            obj = json.load(f)
+            for i in obj:
+                if i == name:
+                    obj[i]["references"].append(url)
+                    f.seek(0)
+                    json.dump(obj, f, indent=4)
+
+            name_entry.delete(0, END)
+            path_entry.delete(0, END)
+            ref_entry.delete(0, END)
 
 
 
@@ -161,9 +191,10 @@ def bring_ref_links():
 ## clears all your saved entries, start over with an empty file.
 ## This does NOT delete your paste box file.
 
+
 def delete_all():
     if os.path.exists(json_file):
-        res = messagebox.askquestion(title='Clear File', message='This will delete your saved spots file, are you sure you want a new one?')
+        res = messagebox.askquestion(title='Clear File', message='This will delete your saved entries file, are you sure you want a new one?')
         if res == 'yes':
             os.remove(json_file)
         elif res == 'no':
@@ -174,10 +205,11 @@ def delete_all():
 
 
 
-## buttons
+# ------------------------------ Buttons ---------------------------------------------- #
+
 
 save_btn = Button(window, text="Save",  command=save_bookmark, fg='black', bg='green2', borderless=True)
-save_btn.grid(column=0, row=3)
+save_btn.grid(column=2, row=0)
 
 paste_btn = Button(window, text="Paste_Box", command=grab_paste_box, fg='black', bg='green2', borderless=True)
 paste_btn.grid(column=1, row=3, padx=10, pady=10)
@@ -186,14 +218,16 @@ show_btn = Button(window, text="Show_List", command=show_recent, fg='black', bg=
 show_btn.grid(column=2, row=3)
 
 search_btn = Button(window, text="Find", command=search_project, fg='black', bg='green2', borderless=True)
-search_btn.grid(column=2, row=0)
+search_btn.grid(column=2, row=1)
 
 urls_btn = Button(window, text="URLS", command=bring_ref_links, fg='black', bg='green2', borderless=True)
-urls_btn.grid(column=2, row=2)
+urls_btn.grid(column=0, row=3)
+
+add_more_urls_btn = Button(window, text="Add+ urls", command=add_ref_urls, fg='black', bg='green2', borderless=True)
+add_more_urls_btn.grid(column=2, row=2)
 
 del_btn = Button(window, text="Delete All", command=delete_all, fg='black', bg='green2', borderless=True)
 del_btn.grid(column=1, row=4, pady=20, padx=20)
 
 window.mainloop()
-
 
