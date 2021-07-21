@@ -73,6 +73,19 @@ Search for individual project names in your recent work load. Get it's info!
 
 </br>
 
+## *Updated Feature* - Add-URLS Button:
+
+After you save a project, you can now add as many web addresses as you need to onto your reference materials.
+Just fill in the project name field and enter the new url into the references field. 
+"Add-URLS" button will parse through your entries file for the matching project name, then append the additional links onto your references.  
+
+
+<img width="1259" alt="addurls" src="https://user-images.githubusercontent.com/74392848/126409419-aff9ea62-1aec-4da9-8efa-e42e7da8ea71.png">
+
+
+
+</br>
+
 To run this app: 
 Clone or download the zip file and open.
 
