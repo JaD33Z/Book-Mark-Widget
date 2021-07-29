@@ -122,7 +122,7 @@ When program is run and entry is saved it will automatically generate 3 files wi
 * And a 'paste_box.txt' file that will open with the widget where you can manually add or delete it's contents.
 
 There is only 2 packages to be installed, just for additional widget/buttons styles for mac os.
-If you don't need these packages, comment them out. (You may have to modify some of the color names(?))
+If you don't need these packages, comment them out in the imports. (note - You might have to modify some of the color names afterward.)
 The other packages imported are built ins and tkinter should still accept the same commands.
 
 
