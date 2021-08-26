@@ -4,7 +4,7 @@
 
 ## App Layout
 
-<img width="475" alt="bookmark" src="https://user-images.githubusercontent.com/74392848/123342456-d0df6000-d51d-11eb-997e-b96ffb357220.png">
+<img width="480" alt="newshot" src="https://user-images.githubusercontent.com/74392848/130929972-790158df-48fc-40f5-a747-2716e89e9824.png">
 
 </br>
 
