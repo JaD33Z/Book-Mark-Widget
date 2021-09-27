@@ -88,7 +88,7 @@ Just fill in the project name field and enter the new url into the references fi
 
 ## Create Directories:
 
-You can store your bookmark files seperately in their own directories inside the app. So if you want to start a new bookmark file you can still keep the old ones. Click the "Create_Dir" button and you will be prompted in the terminal for input. Give a name to the new directory and file. (You don't have to add a meta tag, it automatically gets saved as a json file.) If you would like to save to an exisiting directory or file (or same directory - new file, either or,) just type the name of that directory and file, and it will write the updated info to that file and store in the specified directory.
+You can store your bookmark files seperately in their own directories inside the app. So if you want to start a new bookmark file you can still keep the old ones. Click the "Create_Dir" button and you will be prompted in the terminal for input. Give a name to the new directory and file. (You don't have to add a meta tag, it automatically gets saved as a json file.) If you would like to save to an existing directory or file (or same directory - new file, either or,) just type the name of that directory and file, and it will write the updated info to that file and store in the specified directory.
 
 </br>
 
