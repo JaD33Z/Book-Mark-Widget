@@ -4,7 +4,7 @@
 
 ## App Layout
 
-<img width="480" alt="newshot" src="https://user-images.githubusercontent.com/74392848/130929972-790158df-48fc-40f5-a747-2716e89e9824.png">
+![Screen Shot 2021-09-27 at 4 34 15 AM](https://user-images.githubusercontent.com/74392848/134873712-a4f4aa43-2d4c-4823-b371-08bf44c08f0a.png)
 
 </br>
 
