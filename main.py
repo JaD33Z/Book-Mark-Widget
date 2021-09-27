@@ -186,15 +186,39 @@ def bring_ref_links():
 
 
 
+## 'Create_Dir' button
+## Creates a folder to save your current bookmarks in their own directories.
+
+def create_folder():
+    if not os.path.isfile("marks.json"):
+        messagebox.showinfo(title="Error", message="No Data File Found. You Must Save An Entry"
+                                                   " First Before Creating A Directory For It!")
+
+    else:
+        name_dir = str(input("Enter name you are giving new folder: "))
+        name_file = str(input("Enter name of new file: "))
+        if not os.path.exists(name_dir):
+            os.mkdir(name_dir)
+        name_file = name_file + ".json"
+        path = os.getcwd()
+        new_path = os.path.join(path, name_dir, name_file)
+        with open("marks.json", "r") as json_file, open(new_path, "w") as same_file:
+            data = json.load(json_file)
+            json.dump(data, same_file, indent=4)
+            same_file.close()
+            json_file.close()
+            print("Done:)")
+
+
+
 ## 'Delete All' button
 ## deletes the ('marks.json') file
 ## clears all your saved entries, start over with an empty file.
 ## This does NOT delete your paste box file.
 
-
 def delete_all():
     if os.path.exists(json_file):
-        res = messagebox.askquestion(title='Clear File', message='This will delete your saved entries file, are you sure you want a new one?')
+        res = messagebox.askquestion(title='Clear File', message='This will delete your current saved entries file and start a new one. Note: Your saved folders and files will remain saved though.')
         if res == 'yes':
             os.remove(json_file)
         elif res == 'no':
@@ -225,6 +249,10 @@ urls_btn.grid(column=0, row=3)
 
 add_more_urls_btn = Button(window, text="Add+ urls", command=add_ref_urls, fg='black', bg='green2', borderless=True)
 add_more_urls_btn.grid(column=2, row=2)
+
+
+create_folder_btn = Button(window, text="Create_Dir", command=create_folder, fg='black', bg='green2', borderless=True)
+create_folder_btn.grid(column=2, row=4)
 
 del_btn = Button(window, text="Delete All", command=delete_all, fg='black', bg='green2', borderless=True)
 del_btn.grid(column=1, row=4, pady=20, padx=20)
