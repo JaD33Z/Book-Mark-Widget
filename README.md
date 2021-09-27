@@ -4,7 +4,7 @@
 
 ## App Layout
 
-<img width="475" alt="bookmark" src="https://user-images.githubusercontent.com/74392848/123342456-d0df6000-d51d-11eb-997e-b96ffb357220.png">
+<img width="480" alt="newshot" src="https://user-images.githubusercontent.com/74392848/130929972-790158df-48fc-40f5-a747-2716e89e9824.png">
 
 </br>
 
@@ -73,6 +73,19 @@ Search for individual project names in your recent work load. Get it's info!
 
 </br>
 
+## *Updated Feature* - Add-URLS Button:
+
+After you save a project, you can now add as many web addresses as you need to onto your reference materials.
+Just fill in the project name field and enter the new url into the references field. 
+"Add-URLS" button will parse through your entries file for the matching project name, then append the additional links onto your references.  
+
+
+<img width="1259" alt="addurls" src="https://user-images.githubusercontent.com/74392848/126409419-aff9ea62-1aec-4da9-8efa-e42e7da8ea71.png">
+
+
+
+</br>
+
 To run this app: 
 Clone or download the zip file and open.
 
@@ -109,7 +122,7 @@ When program is run and entry is saved it will automatically generate 3 files wi
 * And a 'paste_box.txt' file that will open with the widget where you can manually add or delete it's contents.
 
 There is only 2 packages to be installed, just for additional widget/buttons styles for mac os.
-If you don't need these packages, comment them out. (You may have to modify some of the color names(?))
+If you don't need these packages, comment them out in the imports. (note - You might have to modify some of the color names afterward.)
 The other packages imported are built ins and tkinter should still accept the same commands.
 
 
