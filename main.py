@@ -1,4 +1,5 @@
 import os
+import shutil
 from datetime import datetime
 import json
 import subprocess
@@ -109,7 +110,7 @@ def grab_paste_box():
 ## 'Show_List' button, opens a text editor file window
 ## to view all your saved data. See recent project names,
 ## directory locations, and reference material
-## urls associated with the projects you are currently working on.
+## urls associated with the projects you are currently working on
 
 
 def show_recent():
@@ -121,8 +122,8 @@ def show_recent():
 
 
 
-## 'Find' button, enter name of project you are looking for, case and space sensitive.
-## Opens up alert window with all of the queried project's info.
+## 'Find' button, enter name of project you are looking for, case and space sensitive
+## Opens up alert window with all of the queried project's info
 
 
 def search_project():
@@ -146,9 +147,9 @@ def search_project():
 
 
 ## 'Add URLS' button
-## "references" key in your saved entries dictionary is now a list of values.
-## Store multiple url locations for your reference materials.
-## Enter the project name and append your additional web addresses.
+## "references" key in your saved entries dictionary is now a list of values
+## Store multiple url locations for your reference materials
+## Enter the project name and append your additional web addresses
 
 
 def add_ref_urls():
@@ -187,7 +188,7 @@ def bring_ref_links():
 
 
 ## 'Create_Dir' button
-## Creates a folder to save your current bookmarks in their own directories.
+## Creates a folder to save your current bookmarks in their own directories
 
 def create_folder():
     if not os.path.isfile("marks.json"):
@@ -211,10 +212,39 @@ def create_folder():
 
 
 
+## Save your paste_box.txt file to a specific directory
+## Compartmentalize clip board notes that go with each separate project
+## You'll be prompted in the terminal with a list of available folders within the app to choose from
+## Pick a folder to store the file in
+## Any other hidden dirs you don't want to show up as an option,
+## just add the filename to the "ignore" list below
+
+def save_paste_box():
+    ignore = ['venv', '.idea', '__pycache__', '.git']
+    directories = os.listdir()
+    ls = [d for d in directories if os.path.isdir(d) and d not in ignore]
+    print(ls)
+    choice = str(input("Which directory are you saving paste_box.txt to? "))
+    try:
+        if choice in ls:
+            c_path = os.getcwd()
+            source = "paste_box.txt"
+            dest = os.path.join(c_path, choice, "paste_box.txt")
+            new_path = shutil.move(source, dest)
+            print(new_path)
+        else:
+            print("Please select an existing directory from the list!\nTry Again")
+    except FileNotFoundError:
+        print("Create new paste file first by pressing Paste_Box button.")
+
+
+
 ## 'Delete All' button
-## deletes the ('marks.json') file
-## clears all your saved entries, start over with an empty file.
-## This does NOT delete your paste box file.
+## Deletes the ('marks.json') file
+## Lets you start over with a clean project file
+## Ideal for after you save a marks.json file to it's own folder
+## Clears all your saved entries, start over with an empty file
+## This does NOT delete your paste box file
 
 def delete_all():
     if os.path.exists(json_file):
@@ -250,9 +280,11 @@ urls_btn.grid(column=0, row=3)
 add_more_urls_btn = Button(window, text="Add+ urls", command=add_ref_urls, fg='black', bg='green2', borderless=True)
 add_more_urls_btn.grid(column=2, row=2)
 
-
 create_folder_btn = Button(window, text="Create_Dir", command=create_folder, fg='black', bg='green2', borderless=True)
 create_folder_btn.grid(column=2, row=4)
+
+save_paste_box_btn = Button(window, text="Save Paste Box", command=save_paste_box, fg='black', bg='green2', borderless=True)
+save_paste_box_btn.grid(column=0, row=4)
 
 del_btn = Button(window, text="Delete All", command=delete_all, fg='black', bg='green2', borderless=True)
 del_btn.grid(column=1, row=4, pady=20, padx=20)
