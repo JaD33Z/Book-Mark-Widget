@@ -4,7 +4,7 @@
 
 ## App Layout
 
-![Screen Shot 2021-09-27 at 4 34 15 AM](https://user-images.githubusercontent.com/74392848/134873712-a4f4aa43-2d4c-4823-b371-08bf44c08f0a.png)
+![Screen Shot 2021-10-17 at 7 41 11 PM](https://user-images.githubusercontent.com/74392848/137649233-8a181cdc-7e8d-439d-9a88-0c384388507f.png)
 
 </br>
 
@@ -19,11 +19,39 @@ Instead of juggling multiple current tasks in your head and keeping a mental rol
 closed, opened, named, read, when and where you left them :thinking:(this could get tiring..) 
 Why not automate this balancing act? 
 
+</br>
+
+## *Updated Features* - Add-URLS Button, Create_Dir Button, Save_Paste_Box Button:
+
+After you save a project, you can now add as many web addresses as you need to onto your reference materials.
+Just fill in the project name field and enter the new url into the references field. 
+"Add-URLS" button will parse through your entries file for the matching project name, then append the additional links onto your references.  
+
+
+<img width="1259" alt="addurls" src="https://user-images.githubusercontent.com/74392848/126409419-aff9ea62-1aec-4da9-8efa-e42e7da8ea71.png">
 
 
 
+</br>
 
+## Create Directories:
 
+You can store your bookmark files seperately in their own directories inside the app. So if you want to start a new bookmark file you can still keep the old ones. Click the "Create_Dir" button and you will be prompted in the terminal for input. Give a name to the new directory and file. (You don't have to add a meta tag, it automatically gets saved as a json file.) If you would like to save to an existing directory or file (or same directory - new file, either or,) just type the name of that directory and file, and it will write the updated info to that file and store in the specified directory.
+
+</br>
+
+## Save Paste Box:
+
+Save your paste_box.txt file to a specific directory
+Compartmentalize clip board notes that go with each separate project
+You'll be prompted in the terminal with a list of available folders within the app to choose from
+Pick a folder to store the file in
+
+</br>
+
+![Screen Shot 2021-10-17 at 8 01 52 PM](https://user-images.githubusercontent.com/74392848/137650092-ea75beba-a1d0-4280-8f8a-ef5b68acc13e.png)
+
+</br>
 
 ## In Action -
 
@@ -73,22 +101,6 @@ Search for individual project names in your recent work load. Get it's info!
 
 </br>
 
-## *Updated Features* - Add-URLS Button, Create_Dir Button:
-
-After you save a project, you can now add as many web addresses as you need to onto your reference materials.
-Just fill in the project name field and enter the new url into the references field. 
-"Add-URLS" button will parse through your entries file for the matching project name, then append the additional links onto your references.  
-
-
-<img width="1259" alt="addurls" src="https://user-images.githubusercontent.com/74392848/126409419-aff9ea62-1aec-4da9-8efa-e42e7da8ea71.png">
-
-
-
-</br>
-
-## Create Directories:
-
-You can store your bookmark files seperately in their own directories inside the app. So if you want to start a new bookmark file you can still keep the old ones. Click the "Create_Dir" button and you will be prompted in the terminal for input. Give a name to the new directory and file. (You don't have to add a meta tag, it automatically gets saved as a json file.) If you would like to save to an existing directory or file (or same directory - new file, either or,) just type the name of that directory and file, and it will write the updated info to that file and store in the specified directory.
 
 </br>
 
